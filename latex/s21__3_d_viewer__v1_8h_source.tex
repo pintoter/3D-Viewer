@@ -1,0 +1,97 @@
+\hypertarget{s21__3_d_viewer__v1_8h_source}{}\doxysection{s21\+\_\+3\+DViewer\+\_\+v1.\+h}
+\label{s21__3_d_viewer__v1_8h_source}\index{include/s21\_3DViewer\_v1.h@{include/s21\_3DViewer\_v1.h}}
+\mbox{\hyperlink{s21__3_d_viewer__v1_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ SRC\_INCLUDE\_S21\_3DVIEWER\_V1\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ SRC\_INCLUDE\_S21\_3DVIEWER\_V1\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}s21\_matrix.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <locale.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ Ox\ 0\ }}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ Oy\ 1}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ Oz\ 2}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ Oxyz\ 3}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ SIZE\ 128}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{structpolygon__t_abedbfbe180d174f3d7639a12ed7c9bc4}{vertexes\_list}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structpolygon__t_abf986da82e743ff7bb6a3246d40a5fa7}{count\_vertex\_of\_facets}};\ }
+\DoxyCodeLine{00028\ \}\ \mbox{\hyperlink{structpolygon__t}{polygon\_t}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structpolygon__t}{polygon\_t}}\ *\mbox{\hyperlink{structobject__t_a5f9cbe809288765110fdf145fef63790}{polygon}};\ \ }
+\DoxyCodeLine{00035\ \ \ \ \ matrix\_t\ \mbox{\hyperlink{structobject__t_abb4b4e919b134c1e0856ed61307ba6eb}{matrix}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{char}\ name[SIZE];\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structobject__t_a1749cf4f66f30ba4a5c6dc7f0042b652}{max\_value\_coordinate}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structobject__t_a15e878b9fc2bed72e307a19570f73a69}{count\_vertexes}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structobject__t_ab69967c2cbfb1093cf2a0dcf06b61fc3}{count\_facets}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structobject__t_acb16113e8469a74773432781c618b740}{max\_vertex}};\ }
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{structobject__t}{object\_t}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698ab58a0b1d4be8cd01c0e89e899a888e35}{CORRECT}},\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698a285fbb59830899945793ec94cecb1d92}{UNCORRECT}},\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698abc27a6b909296003973e169faf52f52d}{FILE\_NOT\_FOUND}},\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698afc84f8cd60f52ab1500e26a25e82ac86}{EMPTY\_FILE}},\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698a2fa3114dc11f3a0dbfc8f2a3d141e2da}{NOT\_ENOUGH\_MEMORY}},\ }
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698}{err\_t}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_ab3926de06f2a311ae8db84edc64a275d}{s21\_loader}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ path,\ \mbox{\hyperlink{structobject__t}{object\_t}}*\ data);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aefffa2ceaf7e8f609be3e7580e33b368}{count\_geometric\_params}}(FILE\ *fp,\ \mbox{\hyperlink{structobject__t}{object\_t}}\ *data);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aa0725f975a4215726e9a0986fa76779d}{check\_param}}(\textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a792262f76a50f4bd770daaacb8bc0988}{parse\_geometric\_params}}(FILE\ *fp,\ \mbox{\hyperlink{structobject__t}{object\_t}}\ *data);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5f7540b18ff8d46cf68a5718768dee05}{write\_value}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{int}\ *current);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_ae6cc0b0162632bd788da9d52d23cbf2f}{get\_name}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *path,\ \mbox{\hyperlink{structobject__t}{object\_t}}\ *data);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a750a533c1a1cc9486d24aa6fa3f157a0}{s21\_geometric\_rotations}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_af77d5ad961c3d97ff7517774794a2ff7}{centering\_object}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a9e62ed3f084b7694f76647aeb3dad2b2}{find\_geometric\_center}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{int}\ axis);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aa19842c4ded0e984ead3bd95db0be26d}{rotate\_object}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{int}\ axis,\ \textcolor{keywordtype}{double}\ axis\_coordinate);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00153\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a247ae9f929575bb467c2a6a97e0a9262}{is\_displayable}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00161\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a1aa24d1f37fd8aa6ce66e06994854c3e}{reduction\_object}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00172\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aaae02812dbb0387b6a39d242e9831d60}{find\_scale}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a57544b378d9165de64cac9061b1a6234}{s21\_remove\_object}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{comment}{//\ Афинные\ преобразования\ }}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00189\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a34327db4bbcc55d376df5c446af6e91d}{s21\_move\_x}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{double}\ move\_x);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00197\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_ad46425c1b7c0586f264b89d41f0838fd}{s21\_move\_y}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{double}\ move\_y);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a723885363f88cb080a749c628af44313}{s21\_move\_z}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{double}\ move\_z);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00212\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a950869c794f37a5006b36bdb931b616d}{s21\_degres\_to\_radians}}(\textcolor{keywordtype}{double}\ angle);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00220\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_adf585d54e942381c6a0aba18698b20b9}{s21\_rotate\_x}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{double}\ angle);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00228\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aafebee8038bce88936579d780be24703}{s21\_rotate\_y}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{double}\ angle);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00236\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a3ed128a4d681934261e5b0c3633bdef5}{s21\_rotate\_z}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{double}\ angle);}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00244\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_abbd0ab16a145c6a82480b90640502975}{s21\_scale}}(\mbox{\hyperlink{structobject__t}{object\_t}}\ *data,\ \textcolor{keywordtype}{double}\ scale);}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00251\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5d1285a7c313e63518a4aef012c56258}{skip\_spaces}}(\textcolor{keywordtype}{char}\ **str);}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00258\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a0efbcc537c5671037014c2877ff42067}{is\_vertex}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SRC\_INCLUDE\_S21\_3DVIEWER\_V1\_H\_}}
+
+\end{DoxyCode}

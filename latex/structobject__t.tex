@@ -1,0 +1,81 @@
+\hypertarget{structobject__t}{}\doxysection{Структура object\+\_\+t}
+\label{structobject__t}\index{object\_t@{object\_t}}
+
+
+Структура Объект  
+
+
+
+
+{\ttfamily \#include $<$s21\+\_\+3\+DViewer\+\_\+v1.\+h$>$}
+
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structpolygon__t}{polygon\+\_\+t}} $\ast$ \mbox{\hyperlink{structobject__t_a5f9cbe809288765110fdf145fef63790}{polygon}}
+\item 
+matrix\+\_\+t \mbox{\hyperlink{structobject__t_abb4b4e919b134c1e0856ed61307ba6eb}{matrix}}
+\item 
+char \mbox{\hyperlink{structobject__t_a9fbde145cc4ff1c0b3b545a1efc569d9}{name}} \mbox{[}SIZE\mbox{]}
+\item 
+double \mbox{\hyperlink{structobject__t_a1749cf4f66f30ba4a5c6dc7f0042b652}{max\+\_\+value\+\_\+coordinate}}
+\item 
+int \mbox{\hyperlink{structobject__t_a15e878b9fc2bed72e307a19570f73a69}{count\+\_\+vertexes}}
+\item 
+int \mbox{\hyperlink{structobject__t_ab69967c2cbfb1093cf2a0dcf06b61fc3}{count\+\_\+facets}}
+\item 
+int \mbox{\hyperlink{structobject__t_acb16113e8469a74773432781c618b740}{max\+\_\+vertex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура Объект 
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{structobject__t_ab69967c2cbfb1093cf2a0dcf06b61fc3}\label{structobject__t_ab69967c2cbfb1093cf2a0dcf06b61fc3}} 
+\index{object\_t@{object\_t}!count\_facets@{count\_facets}}
+\index{count\_facets@{count\_facets}!object\_t@{object\_t}}
+\doxysubsubsection{\texorpdfstring{count\_facets}{count\_facets}}
+{\footnotesize\ttfamily int object\+\_\+t\+::count\+\_\+facets}
+
+Количество поверхностей \mbox{\Hypertarget{structobject__t_a15e878b9fc2bed72e307a19570f73a69}\label{structobject__t_a15e878b9fc2bed72e307a19570f73a69}} 
+\index{object\_t@{object\_t}!count\_vertexes@{count\_vertexes}}
+\index{count\_vertexes@{count\_vertexes}!object\_t@{object\_t}}
+\doxysubsubsection{\texorpdfstring{count\_vertexes}{count\_vertexes}}
+{\footnotesize\ttfamily int object\+\_\+t\+::count\+\_\+vertexes}
+
+Количество вершин \mbox{\Hypertarget{structobject__t_abb4b4e919b134c1e0856ed61307ba6eb}\label{structobject__t_abb4b4e919b134c1e0856ed61307ba6eb}} 
+\index{object\_t@{object\_t}!matrix@{matrix}}
+\index{matrix@{matrix}!object\_t@{object\_t}}
+\doxysubsubsection{\texorpdfstring{matrix}{matrix}}
+{\footnotesize\ttfamily matrix\+\_\+t object\+\_\+t\+::matrix}
+
+Структура Матрица с координатами вершин (i x 3), где i -\/ количество вершин у объекта) и значениями каждой вершины \mbox{\Hypertarget{structobject__t_a1749cf4f66f30ba4a5c6dc7f0042b652}\label{structobject__t_a1749cf4f66f30ba4a5c6dc7f0042b652}} 
+\index{object\_t@{object\_t}!max\_value\_coordinate@{max\_value\_coordinate}}
+\index{max\_value\_coordinate@{max\_value\_coordinate}!object\_t@{object\_t}}
+\doxysubsubsection{\texorpdfstring{max\_value\_coordinate}{max\_value\_coordinate}}
+{\footnotesize\ttfamily double object\+\_\+t\+::max\+\_\+value\+\_\+coordinate}
+
+Значение максимальной координаты \mbox{\Hypertarget{structobject__t_acb16113e8469a74773432781c618b740}\label{structobject__t_acb16113e8469a74773432781c618b740}} 
+\index{object\_t@{object\_t}!max\_vertex@{max\_vertex}}
+\index{max\_vertex@{max\_vertex}!object\_t@{object\_t}}
+\doxysubsubsection{\texorpdfstring{max\_vertex}{max\_vertex}}
+{\footnotesize\ttfamily int object\+\_\+t\+::max\+\_\+vertex}
+
+Номер максимальной вершины \mbox{\Hypertarget{structobject__t_a9fbde145cc4ff1c0b3b545a1efc569d9}\label{structobject__t_a9fbde145cc4ff1c0b3b545a1efc569d9}} 
+\index{object\_t@{object\_t}!name@{name}}
+\index{name@{name}!object\_t@{object\_t}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char object\+\_\+t\+::name\mbox{[}SIZE\mbox{]}}
+
+Имя объекта \mbox{\Hypertarget{structobject__t_a5f9cbe809288765110fdf145fef63790}\label{structobject__t_a5f9cbe809288765110fdf145fef63790}} 
+\index{object\_t@{object\_t}!polygon@{polygon}}
+\index{polygon@{polygon}!object\_t@{object\_t}}
+\doxysubsubsection{\texorpdfstring{polygon}{polygon}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpolygon__t}{polygon\+\_\+t}}$\ast$ object\+\_\+t\+::polygon}
+
+Массив структур Полигон 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{s21__3_d_viewer__v1_8h}{s21\+\_\+3\+DViewer\+\_\+v1.\+h}}\end{DoxyCompactItemize}

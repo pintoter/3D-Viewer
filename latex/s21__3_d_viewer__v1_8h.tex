@@ -1,0 +1,567 @@
+\hypertarget{s21__3_d_viewer__v1_8h}{}\doxysection{Файл include/s21\+\_\+3\+DViewer\+\_\+v1.h}
+\label{s21__3_d_viewer__v1_8h}\index{include/s21\_3DViewer\_v1.h@{include/s21\_3DViewer\_v1.h}}
+
+
+Описание функций, используемых для обработки данных из файла  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}s21\+\_\+matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpolygon__t}{polygon\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Структура Полигон \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structobject__t}{object\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Структура Объект \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a8b763833514cb2f823ab4debe231fef1}\label{s21__3_d_viewer__v1_8h_a8b763833514cb2f823ab4debe231fef1}} 
+\#define {\bfseries Ox}~0
+\item 
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a52f336fd0e562f5306e54efce351b892}\label{s21__3_d_viewer__v1_8h_a52f336fd0e562f5306e54efce351b892}} 
+\#define {\bfseries Oy}~1
+\item 
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a24fba784add2c93279d9f703af311b8b}\label{s21__3_d_viewer__v1_8h_a24fba784add2c93279d9f703af311b8b}} 
+\#define {\bfseries Oz}~2
+\item 
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a31930d6d2ce95f2f911887543088a69f}\label{s21__3_d_viewer__v1_8h_a31930d6d2ce95f2f911887543088a69f}} 
+\#define {\bfseries Oxyz}~3
+\item 
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a70ed59adcb4159ac551058053e649640}\label{s21__3_d_viewer__v1_8h_a70ed59adcb4159ac551058053e649640}} 
+\#define {\bfseries SIZE}~128
+\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698}{err\+\_\+t}} \{ \newline
+\mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698ab58a0b1d4be8cd01c0e89e899a888e35}{CORRECT}}
+, \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698a285fbb59830899945793ec94cecb1d92}{UNCORRECT}}
+, \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698abc27a6b909296003973e169faf52f52d}{FILE\+\_\+\+NOT\+\_\+\+FOUND}}
+, \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698afc84f8cd60f52ab1500e26a25e82ac86}{EMPTY\+\_\+\+FILE}}
+, \newline
+\mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698a2fa3114dc11f3a0dbfc8f2a3d141e2da}{NOT\+\_\+\+ENOUGH\+\_\+\+MEMORY}}
+ \}
+\begin{DoxyCompactList}\small\item\em Перечисления ошибок \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{s21__3_d_viewer__v1_8h_ab3926de06f2a311ae8db84edc64a275d}{s21\+\_\+loader}} (const char $\ast$path, \mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Функция для обработки данных \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aefffa2ceaf7e8f609be3e7580e33b368}{count\+\_\+geometric\+\_\+params}} (FILE $\ast$fp, \mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Функция для подсчета геометрических параметров \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aa0725f975a4215726e9a0986fa76779d}{check\+\_\+param}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Первый элемент в строке \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a792262f76a50f4bd770daaacb8bc0988}{parse\+\_\+geometric\+\_\+params}} (FILE $\ast$fp, \mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Парсинг строки с данными Заполняет структуру координатами вершин и информацию о поверхностях (v / f) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5f7540b18ff8d46cf68a5718768dee05}{write\+\_\+value}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, char $\ast$str, int $\ast$current)
+\begin{DoxyCompactList}\small\item\em Записать значение вершины \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_ae6cc0b0162632bd788da9d52d23cbf2f}{get\+\_\+name}} (const char $\ast$path, \mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Записать значение вершины \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a750a533c1a1cc9486d24aa6fa3f157a0}{s21\+\_\+geometric\+\_\+rotations}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Геометрические преобразования для корретного отображения объекта \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_af77d5ad961c3d97ff7517774794a2ff7}{centering\+\_\+object}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Центрирование объекта \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a9e62ed3f084b7694f76647aeb3dad2b2}{find\+\_\+geometric\+\_\+center}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, int axis)
+\begin{DoxyCompactList}\small\item\em Нахождение геометрического центра объекта \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aa19842c4ded0e984ead3bd95db0be26d}{rotate\+\_\+object}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, int axis, double axis\+\_\+coordinate)
+\begin{DoxyCompactList}\small\item\em Перемещение объекта \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a247ae9f929575bb467c2a6a97e0a9262}{is\+\_\+displayable}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Возможность отображение объекта \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a1aa24d1f37fd8aa6ce66e06994854c3e}{reduction\+\_\+object}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Уменьшение объекта \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aaae02812dbb0387b6a39d242e9831d60}{find\+\_\+scale}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Нахождение максимального значения матрицы \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a57544b378d9165de64cac9061b1a6234}{s21\+\_\+remove\+\_\+object}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Удалить структуру объекта \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a34327db4bbcc55d376df5c446af6e91d}{s21\+\_\+move\+\_\+x}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, double move\+\_\+x)
+\begin{DoxyCompactList}\small\item\em Изменить координату X. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_ad46425c1b7c0586f264b89d41f0838fd}{s21\+\_\+move\+\_\+y}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, double move\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Изменить координату Y. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a723885363f88cb080a749c628af44313}{s21\+\_\+move\+\_\+z}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, double move\+\_\+z)
+\begin{DoxyCompactList}\small\item\em Изменить координату Z. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a950869c794f37a5006b36bdb931b616d}{s21\+\_\+degres\+\_\+to\+\_\+radians}} (double angle)
+\begin{DoxyCompactList}\small\item\em Перевести угол в радианы \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_adf585d54e942381c6a0aba18698b20b9}{s21\+\_\+rotate\+\_\+x}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, double angle)
+\begin{DoxyCompactList}\small\item\em Поворот объекта по X. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_aafebee8038bce88936579d780be24703}{s21\+\_\+rotate\+\_\+y}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, double angle)
+\begin{DoxyCompactList}\small\item\em Поворот объекта по Y. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a3ed128a4d681934261e5b0c3633bdef5}{s21\+\_\+rotate\+\_\+z}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, double angle)
+\begin{DoxyCompactList}\small\item\em Поворот объекта по Z. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_abbd0ab16a145c6a82480b90640502975}{s21\+\_\+scale}} (\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$data, double scale)
+\begin{DoxyCompactList}\small\item\em Масштабирование \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5d1285a7c313e63518a4aef012c56258}{skip\+\_\+spaces}} (char $\ast$$\ast$str)
+\begin{DoxyCompactList}\small\item\em Пропустить пробелы в строке \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a0efbcc537c5671037014c2877ff42067}{is\+\_\+vertex}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Проверка на \textquotesingle{}v\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Описание функций, используемых для обработки данных из файла 
+
+\begin{DoxyAuthor}{Автор}
+leaflaur, harmondp, pintoter 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698}\label{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!err\_t@{err\_t}}
+\index{err\_t@{err\_t}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{err\_t}{err\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698}{err\+\_\+t}}}
+
+
+
+Перечисления ошибок 
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CORRECT@{CORRECT}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!CORRECT@{CORRECT}}}\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698ab58a0b1d4be8cd01c0e89e899a888e35}\label{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698ab58a0b1d4be8cd01c0e89e899a888e35}} 
+CORRECT&Корректно \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNCORRECT@{UNCORRECT}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!UNCORRECT@{UNCORRECT}}}\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698a285fbb59830899945793ec94cecb1d92}\label{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698a285fbb59830899945793ec94cecb1d92}} 
+UNCORRECT&Ошибка \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILE\_NOT\_FOUND@{FILE\_NOT\_FOUND}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!FILE\_NOT\_FOUND@{FILE\_NOT\_FOUND}}}\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698abc27a6b909296003973e169faf52f52d}\label{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698abc27a6b909296003973e169faf52f52d}} 
+FILE\+\_\+\+NOT\+\_\+\+FOUND&Файл не найден \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMPTY\_FILE@{EMPTY\_FILE}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!EMPTY\_FILE@{EMPTY\_FILE}}}\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698afc84f8cd60f52ab1500e26a25e82ac86}\label{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698afc84f8cd60f52ab1500e26a25e82ac86}} 
+EMPTY\+\_\+\+FILE&Пустой файл \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_ENOUGH\_MEMORY@{NOT\_ENOUGH\_MEMORY}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!NOT\_ENOUGH\_MEMORY@{NOT\_ENOUGH\_MEMORY}}}\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698a2fa3114dc11f3a0dbfc8f2a3d141e2da}\label{s21__3_d_viewer__v1_8h_a5edd7aad54ac059bf561cf2f92017698a2fa3114dc11f3a0dbfc8f2a3d141e2da}} 
+NOT\+\_\+\+ENOUGH\+\_\+\+MEMORY&Недостаточно памяти в куче \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_af77d5ad961c3d97ff7517774794a2ff7}\label{s21__3_d_viewer__v1_8h_af77d5ad961c3d97ff7517774794a2ff7}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!centering\_object@{centering\_object}}
+\index{centering\_object@{centering\_object}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{centering\_object()}{centering\_object()}}
+{\footnotesize\ttfamily void centering\+\_\+object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Центрирование объекта 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_aa0725f975a4215726e9a0986fa76779d}\label{s21__3_d_viewer__v1_8h_aa0725f975a4215726e9a0986fa76779d}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!check\_param@{check\_param}}
+\index{check\_param@{check\_param}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{check\_param()}{check\_param()}}
+{\footnotesize\ttfamily char check\+\_\+param (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Первый элемент в строке 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em str} & Копия строки\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает первый буквенный элемент (v / f) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_aefffa2ceaf7e8f609be3e7580e33b368}\label{s21__3_d_viewer__v1_8h_aefffa2ceaf7e8f609be3e7580e33b368}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!count\_geometric\_params@{count\_geometric\_params}}
+\index{count\_geometric\_params@{count\_geometric\_params}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{count\_geometric\_params()}{count\_geometric\_params()}}
+{\footnotesize\ttfamily void count\+\_\+geometric\+\_\+params (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{fp,  }\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Функция для подсчета геометрических параметров 
+
+Парсит строку и определяет строка является вершиной или поверхностью
+
+
+\begin{DoxyParams}{Аргументы}
+{\em fp} & Открытый файл \\
+\hline
+{\em data} & Указатель на структуру\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество вершин и поверхностей Объекта 
+\end{DoxyReturn}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a9e62ed3f084b7694f76647aeb3dad2b2}\label{s21__3_d_viewer__v1_8h_a9e62ed3f084b7694f76647aeb3dad2b2}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!find\_geometric\_center@{find\_geometric\_center}}
+\index{find\_geometric\_center@{find\_geometric\_center}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{find\_geometric\_center()}{find\_geometric\_center()}}
+{\footnotesize\ttfamily double find\+\_\+geometric\+\_\+center (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{int}]{axis }\end{DoxyParamCaption})}
+
+
+
+Нахождение геометрического центра объекта 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em axis} & Ось (OX / OY / OZ) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_aaae02812dbb0387b6a39d242e9831d60}\label{s21__3_d_viewer__v1_8h_aaae02812dbb0387b6a39d242e9831d60}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!find\_scale@{find\_scale}}
+\index{find\_scale@{find\_scale}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{find\_scale()}{find\_scale()}}
+{\footnotesize\ttfamily double find\+\_\+scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Нахождение максимального значения матрицы 
+
+Функция возвращает максимальное значение матрицы
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Максимальное значение матрицы 
+\end{DoxyReturn}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_ae6cc0b0162632bd788da9d52d23cbf2f}\label{s21__3_d_viewer__v1_8h_ae6cc0b0162632bd788da9d52d23cbf2f}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily void get\+\_\+name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Записать значение вершины 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь до файла \\
+\hline
+{\em data} & Объект \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a247ae9f929575bb467c2a6a97e0a9262}\label{s21__3_d_viewer__v1_8h_a247ae9f929575bb467c2a6a97e0a9262}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!is\_displayable@{is\_displayable}}
+\index{is\_displayable@{is\_displayable}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{is\_displayable()}{is\_displayable()}}
+{\footnotesize\ttfamily int is\+\_\+displayable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Возможность отображение объекта 
+
+Если максимальная величина больше 1, то объект нельзя отобразить
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+0 -\/ нельзя отобразить, 1 -\/ можно отобразить 
+\end{DoxyReturn}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a0efbcc537c5671037014c2877ff42067}\label{s21__3_d_viewer__v1_8h_a0efbcc537c5671037014c2877ff42067}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!is\_vertex@{is\_vertex}}
+\index{is\_vertex@{is\_vertex}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{is\_vertex()}{is\_vertex()}}
+{\footnotesize\ttfamily int is\+\_\+vertex (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Проверка на \textquotesingle{}v\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em str} & Исходная строка \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a792262f76a50f4bd770daaacb8bc0988}\label{s21__3_d_viewer__v1_8h_a792262f76a50f4bd770daaacb8bc0988}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!parse\_geometric\_params@{parse\_geometric\_params}}
+\index{parse\_geometric\_params@{parse\_geometric\_params}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{parse\_geometric\_params()}{parse\_geometric\_params()}}
+{\footnotesize\ttfamily int parse\+\_\+geometric\+\_\+params (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{fp,  }\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Парсинг строки с данными Заполняет структуру координатами вершин и информацию о поверхностях (v / f) 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em fp} & Открытый файл \\
+\hline
+{\em data} & Указатель на структуру\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Код ошибки 
+\end{DoxyReturn}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a1aa24d1f37fd8aa6ce66e06994854c3e}\label{s21__3_d_viewer__v1_8h_a1aa24d1f37fd8aa6ce66e06994854c3e}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!reduction\_object@{reduction\_object}}
+\index{reduction\_object@{reduction\_object}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{reduction\_object()}{reduction\_object()}}
+{\footnotesize\ttfamily void reduction\+\_\+object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Уменьшение объекта 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em max\+\_\+value\+\_\+coordinate} & Максимальное значение среди вершин \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_aa19842c4ded0e984ead3bd95db0be26d}\label{s21__3_d_viewer__v1_8h_aa19842c4ded0e984ead3bd95db0be26d}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!rotate\_object@{rotate\_object}}
+\index{rotate\_object@{rotate\_object}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{rotate\_object()}{rotate\_object()}}
+{\footnotesize\ttfamily void rotate\+\_\+object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{int}]{axis,  }\item[{double}]{axis\+\_\+coordinate }\end{DoxyParamCaption})}
+
+
+
+Перемещение объекта 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em axis} & Ось (OX / OY / OZ) \\
+\hline
+{\em axis\+\_\+coordinate} & Значение центра (по оси) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a950869c794f37a5006b36bdb931b616d}\label{s21__3_d_viewer__v1_8h_a950869c794f37a5006b36bdb931b616d}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_degres\_to\_radians@{s21\_degres\_to\_radians}}
+\index{s21\_degres\_to\_radians@{s21\_degres\_to\_radians}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_degres\_to\_radians()}{s21\_degres\_to\_radians()}}
+{\footnotesize\ttfamily double s21\+\_\+degres\+\_\+to\+\_\+radians (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})}
+
+
+
+Перевести угол в радианы 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em angle} & Значение угла \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a750a533c1a1cc9486d24aa6fa3f157a0}\label{s21__3_d_viewer__v1_8h_a750a533c1a1cc9486d24aa6fa3f157a0}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_geometric\_rotations@{s21\_geometric\_rotations}}
+\index{s21\_geometric\_rotations@{s21\_geometric\_rotations}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_geometric\_rotations()}{s21\_geometric\_rotations()}}
+{\footnotesize\ttfamily void s21\+\_\+geometric\+\_\+rotations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Геометрические преобразования для корретного отображения объекта 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_ab3926de06f2a311ae8db84edc64a275d}\label{s21__3_d_viewer__v1_8h_ab3926de06f2a311ae8db84edc64a275d}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_loader@{s21\_loader}}
+\index{s21\_loader@{s21\_loader}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_loader()}{s21\_loader()}}
+{\footnotesize\ttfamily int s21\+\_\+loader (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Функция для обработки данных 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь до файла \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+возращает структуру Объекта 
+\end{DoxyReturn}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a34327db4bbcc55d376df5c446af6e91d}\label{s21__3_d_viewer__v1_8h_a34327db4bbcc55d376df5c446af6e91d}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_move\_x@{s21\_move\_x}}
+\index{s21\_move\_x@{s21\_move\_x}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_move\_x()}{s21\_move\_x()}}
+{\footnotesize\ttfamily void s21\+\_\+move\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{double}]{move\+\_\+x }\end{DoxyParamCaption})}
+
+
+
+Изменить координату X. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em move\+\_\+x} & Изменяем значение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_ad46425c1b7c0586f264b89d41f0838fd}\label{s21__3_d_viewer__v1_8h_ad46425c1b7c0586f264b89d41f0838fd}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_move\_y@{s21\_move\_y}}
+\index{s21\_move\_y@{s21\_move\_y}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_move\_y()}{s21\_move\_y()}}
+{\footnotesize\ttfamily void s21\+\_\+move\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{double}]{move\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Изменить координату Y. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em move\+\_\+y} & Изменяем значение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a723885363f88cb080a749c628af44313}\label{s21__3_d_viewer__v1_8h_a723885363f88cb080a749c628af44313}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_move\_z@{s21\_move\_z}}
+\index{s21\_move\_z@{s21\_move\_z}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_move\_z()}{s21\_move\_z()}}
+{\footnotesize\ttfamily void s21\+\_\+move\+\_\+z (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{double}]{move\+\_\+z }\end{DoxyParamCaption})}
+
+
+
+Изменить координату Z. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em move\+\_\+z} & Изменяем значение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a57544b378d9165de64cac9061b1a6234}\label{s21__3_d_viewer__v1_8h_a57544b378d9165de64cac9061b1a6234}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_remove\_object@{s21\_remove\_object}}
+\index{s21\_remove\_object@{s21\_remove\_object}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_remove\_object()}{s21\_remove\_object()}}
+{\footnotesize\ttfamily void s21\+\_\+remove\+\_\+object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Удалить структуру объекта 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_adf585d54e942381c6a0aba18698b20b9}\label{s21__3_d_viewer__v1_8h_adf585d54e942381c6a0aba18698b20b9}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_rotate\_x@{s21\_rotate\_x}}
+\index{s21\_rotate\_x@{s21\_rotate\_x}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_rotate\_x()}{s21\_rotate\_x()}}
+{\footnotesize\ttfamily void s21\+\_\+rotate\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{double}]{angle }\end{DoxyParamCaption})}
+
+
+
+Поворот объекта по X. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em angle} & Значение угла \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_aafebee8038bce88936579d780be24703}\label{s21__3_d_viewer__v1_8h_aafebee8038bce88936579d780be24703}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_rotate\_y@{s21\_rotate\_y}}
+\index{s21\_rotate\_y@{s21\_rotate\_y}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_rotate\_y()}{s21\_rotate\_y()}}
+{\footnotesize\ttfamily void s21\+\_\+rotate\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{double}]{angle }\end{DoxyParamCaption})}
+
+
+
+Поворот объекта по Y. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em angle} & Значение угла \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a3ed128a4d681934261e5b0c3633bdef5}\label{s21__3_d_viewer__v1_8h_a3ed128a4d681934261e5b0c3633bdef5}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_rotate\_z@{s21\_rotate\_z}}
+\index{s21\_rotate\_z@{s21\_rotate\_z}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_rotate\_z()}{s21\_rotate\_z()}}
+{\footnotesize\ttfamily void s21\+\_\+rotate\+\_\+z (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{double}]{angle }\end{DoxyParamCaption})}
+
+
+
+Поворот объекта по Z. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em angle} & Значение угла \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_abbd0ab16a145c6a82480b90640502975}\label{s21__3_d_viewer__v1_8h_abbd0ab16a145c6a82480b90640502975}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!s21\_scale@{s21\_scale}}
+\index{s21\_scale@{s21\_scale}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{s21\_scale()}{s21\_scale()}}
+{\footnotesize\ttfamily void s21\+\_\+scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{double}]{scale }\end{DoxyParamCaption})}
+
+
+
+Масштабирование 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em scale} & Величина масштабирования \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a5d1285a7c313e63518a4aef012c56258}\label{s21__3_d_viewer__v1_8h_a5d1285a7c313e63518a4aef012c56258}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!skip\_spaces@{skip\_spaces}}
+\index{skip\_spaces@{skip\_spaces}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{skip\_spaces()}{skip\_spaces()}}
+{\footnotesize\ttfamily void skip\+\_\+spaces (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Пропустить пробелы в строке 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em str} & Исходная строка \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{s21__3_d_viewer__v1_8h_a5f7540b18ff8d46cf68a5718768dee05}\label{s21__3_d_viewer__v1_8h_a5f7540b18ff8d46cf68a5718768dee05}} 
+\index{s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}!write\_value@{write\_value}}
+\index{write\_value@{write\_value}!s21\_3DViewer\_v1.h@{s21\_3DViewer\_v1.h}}
+\doxysubsubsection{\texorpdfstring{write\_value()}{write\_value()}}
+{\footnotesize\ttfamily int write\+\_\+value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobject__t}{object\+\_\+t}} $\ast$}]{data,  }\item[{char $\ast$}]{str,  }\item[{int $\ast$}]{current }\end{DoxyParamCaption})}
+
+
+
+Записать значение вершины 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Объект \\
+\hline
+{\em str} & Копия строки \\
+\hline
+{\em ch} & Передаваемый тип (Вершина/Грань) \\
+\hline
+{\em current} & Номер обрабатываемой вершины (начиная с 0)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+CORRECT / UNCORRECT 
+\end{DoxyReturn}

@@ -1,0 +1,68 @@
+\hypertarget{s21__matrix_8h_source}{}\doxysection{s21\+\_\+matrix.\+h}
+\label{s21__matrix_8h_source}\index{include/s21\_matrix.h@{include/s21\_matrix.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SRC\_S21\_MATRIX\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SRC\_S21\_MATRIX\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ SUCCESS\ 1}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ FAILURE\ 0}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ CALC\_ERROR\ 2}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ MATRIX\_ERROR\ 1}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ OK\ 0}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ PRECISION\ 1e-\/7}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmatrix__struct}{matrix\_struct}}\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{double}\ **matrix;}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{int}\ rows;}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{int}\ columns;}
+\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Creating\ matrix}}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{int}\ s21\_create\_matrix(\textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ columns,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *result);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Cleaning\ matrix}}
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ s21\_remove\_matrix(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Matrix\ comparison}}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{int}\ s21\_eq\_matrix(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *B);}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{int}\ rows\_equal(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *B);}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{int}\ columns\_equal(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *B);}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{int}\ matrix\_equal(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *B);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ Adding\ and\ subtracting\ matrices}}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{int}\ s21\_sum\_matrix(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *B,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *result);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{int}\ s21\_sub\_matrix(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *B,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *result);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ Matrix\ multiplication\ by\ scalar\ and\ multiplication\ of\ two\ matrix}}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{int}\ s21\_mult\_number(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \textcolor{keywordtype}{double}\ number,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *result);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{int}\ s21\_mult\_matrix(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *B,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *result);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ Matrix\ transpose}}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{int}\ s21\_transpose(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *result);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ Minor\ matrix}}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{int}\ s21\_calc\_complements(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *result);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ Matrix\ determinant}}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{int}\ s21\_determinant(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \textcolor{keywordtype}{double}\ *result);}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{double}\ det\_matrix(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ A,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ Inverse\ of\ the\ matrix}}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{int}\ s21\_inverse\_matrix(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *result);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ Additional\ func}}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ correct\_matrix(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A);}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{int}\ correct\_calc(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *A);}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ sign(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ fill\_matrix(\mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ A,\ \textcolor{keywordtype}{int}\ skip\_row,\ \textcolor{keywordtype}{int}\ skip\_column,\ \mbox{\hyperlink{structmatrix__struct}{matrix\_t}}\ *result);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SRC\_S21\_MATRIX\_H\_}}
+
+\end{DoxyCode}
